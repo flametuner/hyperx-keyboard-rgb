@@ -1,4 +1,4 @@
-class PacketBuffer(object):
+class Buffer(object):
     def __init__(self, size: int):
         self.content = [0]*size
     

@@ -34,7 +34,7 @@ class KspHidHelper():
         return _found_interfaces
     
     @staticmethod
-    def get_interface_path_for_pidvid(vid, pid, interface_number):
+    def get_interface_path_for_pidvid(vid, pid, interface_number) -> str:
         for d in hid.enumerate():
             if d['vendor_id'] == vid and d['product_id'] == pid and d['interface_number'] == interface_number:
                 return d['path']
