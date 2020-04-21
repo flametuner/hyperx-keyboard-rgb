@@ -4,4 +4,4 @@ class Color(object):
         self.g = g
         self.b = b
     def get(self):
-        return (r,g,b)
+        return [self.r, self.g, self.b]

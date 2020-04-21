@@ -9,6 +9,8 @@ class Buffer(object):
     def replace_at_offset(self, values: [int], offset: int):
         for i in range(0, len(values)):
             self.content[offset + i] = values[i]
+    def get_offset_l(self, offset: int, length: int):
+        return self.content[offset:offset+length]
     def get(self):
         return [len(self.content)] + self.content
     def get_raw(self):
@@ -17,7 +19,7 @@ class Buffer(object):
     def split_into_buffers(self, size):
         splitted = []
         for i in range(0, len(self.content), size):
-            _pb = PacketBuffer(size)
+            _pb = Buffer(size)
             _pb.replace_at_offset(self.content[i:i+size],0)
             splitted.append(_pb)
         return splitted
