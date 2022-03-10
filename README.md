@@ -7,7 +7,7 @@ Written in Python, It is a early proof of concept.
 
 ## Supported Devices
 
-* `HyperX Alloy Origins - confirmed by me`
+* `HyperX Alloy Origins Core - confirmed by me`
 
 ## Requirements
 

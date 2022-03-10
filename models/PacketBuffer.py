@@ -14,6 +14,9 @@ class PacketBuffer(object):
     def get_raw(self):
         return self.content
 
+    def __len__(self):
+        return len(self.content)
+
     def split_into_buffers(self, size):
         splitted = []
         for i in range(0, len(self.content), size):
@@ -21,3 +24,8 @@ class PacketBuffer(object):
             _pb.replace_at_offset(self.content[i:i+size],0)
             splitted.append(_pb)
         return splitted
+
+    def get_slice(self, s, size):
+        _pb = PacketBuffer(size)
+        _pb.replace_at_offset(self.content[s:s+size],0)
+        return _pb
